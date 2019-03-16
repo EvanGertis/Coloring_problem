@@ -8,7 +8,10 @@ CP::ColoringProblem::ColoringProblem(const std::vector<std::vector<int>> &graph,
 {	
 	//reset the size of the color vector based on the dimensions of the graph matrix
 	colors.resize(graphMatrix.size());
+}
 
+void CP::ColoringProblem::operator()()
+{
 	if (solve(0)) {
 		showResult();
 	}

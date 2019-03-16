@@ -17,7 +17,7 @@ namespace CP {
 		ColoringProblem(const std::vector<std::vector<int>> &graph, int _numOfColors);
 		
 		//solve the coloring problem
-		
+		void operator()();
 		~ColoringProblem();
 
 	private:

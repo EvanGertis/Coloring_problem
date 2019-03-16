@@ -20,4 +20,5 @@ int main()
 	constexpr int numOfColors = 4;
 
 	CP::ColoringProblem problem(graph, numOfColors);
+	problem();
 }
