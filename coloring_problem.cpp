@@ -10,9 +10,14 @@ There may be more that one solution.
 #include <iostream>
 
 int main()
-{
-	const std::vector<std::vector<int>> graph{ {1, 0, 0}, {0, 1, 0}, {0, 0, 1} };
-	constexpr int numOfColors = 3;
+{											  //A, B, C, D, E, F
+	const std::vector<std::vector<int>> graph{ {1, 1, 1, 1, 0, 0}, //A 
+											   {1, 1, 1, 0, 1, 1}, //B
+											   {1, 1, 1, 1, 0, 1}, //C
+											   {1, 0, 1, 1, 0, 1}, //D
+											   {0, 0, 0, 0, 1, 1}, //E
+											   {0, 1, 1, 1, 1, 1}}; //F
+	constexpr int numOfColors = 4;
 
 	CP::ColoringProblem problem(graph, numOfColors);
 }
