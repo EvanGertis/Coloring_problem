@@ -12,7 +12,7 @@ There may be more that one solution.
 int main()
 {
 	const std::vector<std::vector<int>> graph{ {1, 0, 0}, {0, 1, 0}, {0, 0, 1} };
-	int _numOfColors = 3;
+	constexpr int numOfColors = 3;
 
-	CP::ColoringProblem problem(graph, _numOfColors);
+	CP::ColoringProblem problem(graph, numOfColors);
 }
