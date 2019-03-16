@@ -26,11 +26,20 @@ bool CP::ColoringProblem::solve(std::size_t nodeIndex)
 	return false;
 }
 
+// function to check whether or the solution is valid or not.
 bool CP::ColoringProblem::isColorValid(std::size_t nodeIndex, std::size_t colorIndex)
 {
-	return false;
+	for (std::size_t i = 0; i < this->graphMatrix.size(); i++) {
+		
+		if (this->graphMatrix[nodeIndex][i] == 1 && colorIndex == colors[i]) {
+			return false;
+		}
+	}
+
+	return true;
 }
 
+//prints out the result.
 void CP::ColoringProblem::showResult() {
 	for (std::size_t i = 0; i < graphMatrix.size(); i++) {
 		std::cout << "Node " << (i + 1) << " has color index: " << colors[i] << "\n";
