@@ -11,5 +11,8 @@ There may be more that one solution.
 
 int main()
 {
-    std::cout << "Hello World!\n"; 
+	const std::vector<std::vector<int>> graph{ {1, 0, 0}, {0, 1, 0}, {0, 0, 1} };
+	int _numOfColors = 3;
+
+	CP::ColoringProblem problem(graph, _numOfColors);
 }
