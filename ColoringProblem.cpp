@@ -23,6 +23,27 @@ CP::ColoringProblem::~ColoringProblem()
 
 bool CP::ColoringProblem::solve(std::size_t nodeIndex)
 {
+	//if all nodes have been considered then we are done.
+	if (nodeIndex == graphMatrix.size()) {
+		return true;
+	}
+
+	//otherwise try all colors
+	for (int colorIndex = 1; colorIndex <= numOfColors; colorIndex++) {
+		
+		//check if the given color is valid AKA(no adjacent nodes have the same color)
+		if (isColorValid(nodeIndex, colorIndex)) {
+			
+			//the color is valid: assign and proceed with the next vertex.
+			colors[nodeIndex] = colorIndex;
+
+			//try to find the color for the next node.
+			if (solve(nodeIndex + 1)) {
+				return true;
+			}
+			//else back track
+		}
+	}
 	return false;
 }
 
